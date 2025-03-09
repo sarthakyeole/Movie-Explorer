@@ -1,0 +1,138 @@
+.favorites {
+  padding: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.favorites h2 {
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 2.2rem;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Empty favorites section */
+.favorites-empty {
+  text-align: center;
+  padding: 3rem 2rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  margin: 2rem auto;
+  max-width: 500px;
+}
+
+.favorites-empty h2 {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  color: #e50914;
+}
+
+.favorites-empty p {
+  color: #aaa;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  justify-content: center;
+  padding: 1rem;
+}
+
+
+.movie-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+  width: 100%;
+  max-width: 250px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+}
+
+
+.movie-poster img {
+  width: 100%;
+  height: 350px; 
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+
+.movie-overlay {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.favorite-btn {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: white;
+  transition: color 0.2s ease-in-out;
+}
+
+.favorite-btn.active {
+  color: #e50914;
+}
+
+/* Movie Info */
+.movie-info {
+  padding: 1rem;
+  text-align: center;
+}
+
+.movie-info h3 {
+  font-size: 1.4rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.movie-info p {
+  font-size: 1rem;
+  color: #bbb;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.movies-grid > * {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+@media (max-width: 768px) {
+  .favorites {
+    padding: 1rem;
+  }
+
+  .movies-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+
+  .movie-card {
+    max-width: 200px;
+  }
+
+  .movie-poster img {
+    height: 300px;
+  }
+}
